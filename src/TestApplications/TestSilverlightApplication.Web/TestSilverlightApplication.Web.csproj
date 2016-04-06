@@ -14,13 +14,14 @@
     <RootNamespace>TestSilverlightApplication.Web</RootNamespace>
     <AssemblyName>TestSilverlightApplication.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <SilverlightApplicationList>{EC32732F-6CB9-4078-B3A8-E3F038D5C2E1}|..\TestSilverlightApplication\TestSilverlightApplication.csproj|ClientBin|False</SilverlightApplicationList>
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,7 +92,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>18183</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/TestSilverlightApplication.Web</IISUrl>
+          <IISUrl>http://localhost:18183/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
