@@ -18,6 +18,8 @@ namespace TestStack.White.UITests.Scenarios
         const string Notepad = @"C:\Windows\system32\notepad.exe";
         const string InternetExplorer = @"C:\Program Files\Internet Explorer\iexplore.exe";
 
+        protected ComboBox ComboBoxUnderTest { get; set; }
+
         [Test]
         public void NotepadTests()
         {
@@ -30,7 +32,15 @@ namespace TestStack.White.UITests.Scenarios
 
                 using (var modalWindow = window.ModalWindow("Font"))
                 {
-                    Assert.That(modalWindow, Is.Not.Null);
+                    ComboBoxUnderTest = modalWindow.Get<ComboBox>(SearchCriteria.ByClassName("ComboBox"));
+                    ComboBoxUnderTest.Select("Cooper");
+                    var comboBoxSize = modalWindow.Get<ComboBox>(SearchCriteria.ByAutomationId("1138"));
+                    comboBoxSize.Select("20");
+                    Assert.That(ComboBoxUnderTest.SelectedItemText, Is.EqualTo("Cooper"));
+                    Assert.That(comboBoxSize.SelectedItemText, Is.EqualTo("20"));
+                    var button = modalWindow.Get<Button>(SearchCriteria.ByAutomationId("1"));
+                    button.Click();
+                    //Assert.That(modalWindow, Is.Not.Null);
                 }
             }
         }
